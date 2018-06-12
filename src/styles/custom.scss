@@ -1,0 +1,331 @@
+@import 'open-iconic.scss';
+$img-path: '../../images/' !default;
+
+$text-color: #eee;
+$color-primary: #46a230;
+$color-secondary: #40bbd5;
+$color-highlight: #43a9fb;
+$mobile-view: 720px;
+
+html { font-size: 12px; }
+html,body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background: #120b0b ;
+  background-repeat: repeat;
+  color: $text-color;
+  font-size: 1rem;
+  display: flex;
+}
+h1,h2,h3,h4,h5,h6 { text-transform: uppercase; color: $color-primary }
+a {
+  text-decoration: none;
+  color: #eee;
+}
+a:hover { color: $color-primary; }
+p { margin: 0.25rem; }
+textarea {
+  height: 160px;
+  width: 80% !important;
+  margin: 1rem auto;
+  background: #111;
+  color: #43a9fb;
+  padding: 1rem;
+  border: 1px solid #000;
+}
+
+.dnone { display: none; }
+.dflex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex1 { flex: 1; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.text-primary { color: $color-primary; }
+.text-secondary { color: $color-secondary; }
+.text-highlight { color: $color-highlight; }
+.c-secondary { color: $color-secondary; }
+.mt0 { margin-top: 0 !important; }
+.mt1 { margin-top: -5rem !important; }
+.mt2 { margin-top: -3rem !important; }
+.mt3 { margin-top: 1rem !important; }
+.mt4 { margin-top: 3rem !important; }
+.mt5 { margin-top: 5rem !important; }
+.mr1 { margin-right: -2rem !important; }
+.mr2 { margin-right: 1rem !important; }
+.mr3 { margin-right: 2rem !important; }
+.ml1 { margin-left: -2rem !important; }
+.ml2 { margin-left: 1rem !important; }
+.ml3 { margin-left: 2rem !important; }
+
+.fr { float: right; }
+.fl { float: left; }
+.btn {
+  background-color: #333;
+  color: $text-color;
+  border-radius: 3px;
+  border: 1px solid #444;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0.5rem;
+  min-width: 7rem;
+  text-align: center;
+  &--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+  &--primary {
+    background-color: $color-primary;
+    color: #eee;
+  }
+  &--primary:hover {
+    background-color: #59cc3d !important;
+    color: #000;
+  }
+}
+.btn:hover {
+  background-color: #444;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.skull-left, .skull-right {
+  background-image: url('#{$img-path}skull.gif');
+  background-size: cover;
+  position: absolute;
+  top: 110px;
+  right: 10px;
+  width: 8rem;
+  height: 8rem;
+  margin-bottom: 1rem;
+  margin-top: -3rem;
+  @media screen and (max-width: $mobile-view) {
+    left: 10px;
+    top: 190px;
+    width: 100px;
+  }
+}
+.skull-left {
+  left: 10px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.navbar {
+	background-color: #2a2a2a;
+	box-shadow: 1px 3px 6px #000;
+	border-bottom: 1px solid #333;
+	border-top: 1px solid #333;
+	padding: 0.5rem 2rem;
+	display: flex;
+	align-items: center;
+	h1 {
+		font-size: 1rem;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 1px #000;
+		display: inline-block;
+		margin-right: 1rem;
+		color: $color-primary;
+	}
+	ul {
+		list-style: none;
+		display: flex;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		right: 1rem;
+    @media screen and (max-width: $mobile-view) {
+      //display: none;
+    }
+		li {
+			display: flex;
+			margin-left: 1.5rem;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.progress-header {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.chart {
+	text-align: center;
+	flex-direction: row;
+	display: flex;
+  @media screen and (max-width: $mobile-view) {
+    flex-direction: column;
+  }
+	&__left,
+	&__right {
+		margin: 2rem;
+		border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+		padding: 1rem;
+		display: flex;
+		flex: 1;
+
+		flex-direction: column;
+		align-self: center;
+		span {
+			color: $color-secondary;
+      // text-transform: uppercase;
+		}
+    @media screen and (max-width: $mobile-view) {
+      width: 90%;
+    }
+	}
+	&__center { align-self: center; }
+}
+
+.view-queue {
+	padding: 1rem;
+  background: #180f0f;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	h2 {
+    margin-top: 0;
+		color: $color-primary;
+	}
+	.promote_next {
+		width: 30px;
+		margin-top: 1rem;
+	}
+}
+
+.view-cracked {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  margin: 0 auto;
+  padding: 1rem;
+	h2 { color: $color-primary; }
+}
+
+.card {
+  display: inline-block;
+	margin: 1rem;
+	background: #222;
+	box-shadow: 0px 2px 3px #000;
+  width: 100%;
+	max-width: 600px;
+  box-shadow: 1px 1px 1px #333;
+  border: 0.5rem solid #0a0a0a;
+	&__header {
+		background: #2a2a2a;
+		padding: 1rem;
+		border-top: 1px solid #555;
+		border-left: 1px solid #555;
+		border-bottom: 1px solid #1a1a1a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	}
+	&__body {
+		padding: 1rem;
+		border-left: 1px solid #555;
+		span {
+			color: $color-primary;
+		}
+	}
+  @media screen and (max-width: $mobile-view) {
+    max-width: 300px;
+  }
+}
+
+
+.field {
+  flex: 1;
+  display: flex;
+}
+.field.upload {
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  input[type='file'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font-size: 100px;
+    cursor: pointer;
+  }
+}
+form .field-group{
+  display: flex;
+  margin: 0 0 12px 0;
+  align-items: center;
+}
+form .field-group .label{
+  text-align: left;
+  margin: 0 8px 0 0;
+  padding: 2px 0;
+  width: 15%;
+}
+form .field-group:last-child{
+  display: flex;
+  justify-content: flex-end;
+}
+select,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 0.8rem;
+  background: #111;
+  border: 1px solid #333;
+  color: #eee;
+}
+textarea {
+  width: 100%;
+  overflow: auto;
+  height: 13px;
+}
+input, select{ width: 100%; }
+input[type="radio"],
+input[type="checkbox"],
+input[type="submit"]{
+  width: auto;
+}
+
+@media (max-width: 720px) {
+  form .field-group .label{
+     text-align: left;
+     margin: 0;
+  }
+  input, select{ width: 60%; }
+}
+@media (max-width: 480px) {
+  select{width: 100%;}
+  input[type="radio"],
+  input[type="checkbox"],
+  input[type="submit"]{ width: auto; }
+  form .field-group{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 6px 0;
+  }
+  form .field-group .label{
+    padding: 0 0 5px 0;
+    margin: 10px 0 0 0;
+  }
+}
+
+
+.vue-typer .custom.char {
+  color: #D4D4BD;
+  background-color: #1E1E1E;
+}
+.vue-typer .custom.char.selected {
+  background-color: #264F78;
+}
+
+.vue-typer .custom.caret {
+  width: 0.25rem;
+  background-color: #444;
+}

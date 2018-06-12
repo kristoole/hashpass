@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+require 'listen'
+require 'rest-client'
+require 'json'
+
+listener = Listen.to(ARGV[0]) do |modified, added, removed|
+  unless added.empty?
+    upres = RestClient.post('http://localhost:8080/api/upload', :files => {'0' => File.new(added[0], 'rb')})
+    penres = RestClient.post 'http://localhost:8080/api/pending', 
+      {hash: added[0],
+      dictionary: 'rockyou.txt',
+      dictionary2: '',
+      rules: '',
+      mask: '',
+      hashmode: '2500',
+      hashstring: ''
+      }.to_json, {content_type: :json, accept: :json}
+  end
+end
+listener.start
+
+puts "Listening for captures in #{ARGV[0]}..."
+puts "Ctrl-C to stop."
+loop do
+  # \m/
+end
